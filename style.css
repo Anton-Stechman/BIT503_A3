@@ -52,7 +52,7 @@ body
     background: transparent;
     border: 0;
     font-size: 40px;
-    color:rgba(255, 255, 255, 0.17);
+    color:rgba(247, 247, 247, 0.81);
 }
 .carousel_button img
 {
@@ -61,12 +61,12 @@ body
 
 .carousel_button--left
 {
-    left: -35px;
+    left: -0px;
     cursor: pointer;
 }
 .carousel_button--right
 {
-    right: -35px;
+    right: 0px;
     cursor: pointer;
 }
 
