@@ -2,7 +2,10 @@ body
 {
     background-color: rgb(2, 14, 47);
 }
-
+p
+{
+    font-family: cursive;
+}
 #banner
 {
     background: rgba(116, 118, 168, 0.28);
@@ -18,16 +21,13 @@ body
     margin: auto;
     text-align: center;
     color: aliceblue;
-    max-width: 60%;
-    min-width: 30%;
+    width: 100%;
 }
 .panel
 {
     color: aliceblue;
     max-width: 30%;
-    font-size: 1.1em;
-    padding-left: 0;
-    padding-right: 0;
+   /* font-size: 1.1em;*/
 }
 .panel ul
 {
@@ -51,10 +51,15 @@ body
     font-size: 1.5em;
     padding: 5px;
 }
-
-.panel a
+a
 {
     text-decoration: none;
+    color: aliceblue;
+}
+.main a : hover
+{
+    color: aqua;
+    text-decoration: underline;
 }
 /*Below is the styling for the image carousel*/
 button:focus

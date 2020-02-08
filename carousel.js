@@ -17,9 +17,11 @@ slides.forEach(setSlidePosition);
 var i = 0;
 var currentSlide;
 var currentDot;
-var sec = 2; //Delay Between Slides - CAN EDIT
+var sec = 25; //Delay Between Slides - CAN EDIT
 const delayMultiplier = 1000; //DO NOT EDIT
 var delay = sec * delayMultiplier;
+var timer;
+var canScroll = false;
 
 //Get The Current Slide & Dot Navigation Button
 const geCurrentSlide = () => 
@@ -29,10 +31,11 @@ const geCurrentSlide = () =>
 }
 
 //Move To The Next Slide & Dot Navigation Button
-const moveSlides = (i) =>
+const moveSlides = (i, startTime) =>
 {
     geCurrentSlide();
 
+    var curState;
     var nextSlide           = slides[i];
     var nextDot             = dots[i];
     const amountToMove      = nextSlide.style.left;
@@ -45,7 +48,7 @@ const moveSlides = (i) =>
     currentSlide.classList.remove('current-slide');
     
     //clearTimeout(function() {get_next_slide("right");}, delay)
-    setTimeout(function() { get_next_slide("right"); }, delay);
+    timer = window.setTimeout(function() { get_next_slide("right"); }, delay);
 }
 
 //Get The Next Slide & Dot Navigation Button
@@ -79,26 +82,26 @@ const get_next_slide = (direction) =>
             }
     }
 
-    moveSlides(i);    
+    moveSlides(i, new Date());    
 }
 
 //When user clicks right, move slides to the right
-nextButton.addEventListener('click', function() { clearTimeout(delay); get_next_slide("right"); });
+nextButton.addEventListener('click', function() { window.clearTimeout(timer); get_next_slide("right"); canScroll = false;});
 
 //When user clicks left, move slides to the left
-prevButton.addEventListener('click', function() { clearTimeout(delay); get_next_slide("left"); });
+prevButton.addEventListener('click', function() { window.clearTimeout(timer); get_next_slide("left"); canScroll = false;});
 
 //TODO:
 //When user clicks nav indicator, slides move to that slide
 const dotNavigation = (nextIndex) => 
 {
     i = nextIndex;
-    moveSlides(i);
+    moveSlides(i, new Date());
 }
 
 const clickDot = (dot, index) =>
 {
-    dot.addEventListener('click', function() { clearTimeout(delay); dotNavigation(dots.indexOf(dot)); });
+    dot.addEventListener('click', function() { window.clearTimeout(timer); dotNavigation(dots.indexOf(dot)); canScroll = false;});
 }
 
 dots.forEach(clickDot);
@@ -106,12 +109,12 @@ dots.forEach(clickDot);
 
 window.onload = (function() 
 {    
-    setTimeout(function() { get_next_slide("right"); }, delay);
+    timer = window.setTimeout(function() { get_next_slide("right"); }, delay);
     
     //Set Some Styling With jQuery
     $('.carousel_track').css("transition-duration", "1.5s");
-    $("h1").css("font-size", "2em");
-    $("h2").css("font-size", "1.5em");
+    $("h1").css("font-size", "1.5em");
+    $("h2").css("font-size", "1.1em");
     
     
 });
