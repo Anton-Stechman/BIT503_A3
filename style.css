@@ -113,8 +113,14 @@ button:focus
     transform: translateY(-50%);
     background: transparent;
     border: 0;
+    height: 100%;
+    width: 10%;
     font-size: 40px;
-    color:rgba(247, 247, 247, 0.81);
+    
+}
+.carousel_button:hover
+{
+    color: rgba(247, 247, 247, 0.81);
 }
 .carousel_button img
 {

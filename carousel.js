@@ -17,7 +17,7 @@ slides.forEach(setSlidePosition);
 var i = 0;
 var currentSlide;
 var currentDot;
-var sec = 25; //Delay Between Slides - CAN EDIT
+var sec = 2; //Delay Between Slides - CAN EDIT
 const delayMultiplier = 1000; //DO NOT EDIT
 var delay = sec * delayMultiplier;
 var timer;
@@ -48,6 +48,7 @@ const moveSlides = (i) =>
     currentSlide.classList.remove('current-slide');
     
     timer = window.setTimeout(function() { get_next_slide("right"); }, delay);
+    window.setTimeout(function() { hideScrollButton(); }, 1500);
 }
 
 //Get The Next Slide & Dot Navigation Button
@@ -64,6 +65,7 @@ const get_next_slide = (direction) =>
                 else
                 {
                     i = 0;
+                    direction = "left";
                 }
                 break;
             }
@@ -72,6 +74,7 @@ const get_next_slide = (direction) =>
                 if (i < 1)
                 {
                     i = slides.length - 1;
+                    direction = "right";
                 }
                 else
                 {
@@ -80,40 +83,49 @@ const get_next_slide = (direction) =>
                 break;
             }
     }
-
+    showScrollButton(direction);
     moveSlides(i);    
 }
 
 //When user clicks right, move slides to the right
-nextButton.addEventListener('click', function() { window.clearTimeout(timer); get_next_slide("right"); canScroll = false;});
+nextButton.addEventListener('click', function() { window.clearTimeout(timer); hideScrollButton(); get_next_slide("right")});
 
 //When user clicks left, move slides to the left
-prevButton.addEventListener('click', function() { window.clearTimeout(timer); get_next_slide("left"); canScroll = false;});
+prevButton.addEventListener('click', function() { window.clearTimeout(timer);hideScrollButton(); get_next_slide("left");});
 
 //TODO:
 //When user clicks nav indicator, slides move to that slide
 const dotNavigation = (nextIndex) => 
 {
+    geCurrentSlide();
+    hideScrollButton();
+    
+    if (nextIndex > i)
+    {
+        showScrollButton("right");
+    }
+    else if (nextIndex < i)
+    {
+        showScrollButton("left");
+    }
+    
     i = nextIndex;
-    moveSlides(i);
+    
+    if (dots[i] != currentDot)
+    {
+        moveSlides(i);
+    }
 }
 
 const clickDot = (dot, index) =>
 {
-    dot.addEventListener('click', function() { window.clearTimeout(timer); dotNavigation(dots.indexOf(dot)); canScroll = false;});
+    dot.addEventListener('click', function() { window.clearTimeout(timer); dotNavigation(dots.indexOf(dot));});
 }
 
 dots.forEach(clickDot);
 
 
-window.onload = (function() 
-{    
+window.onload = () =>
+{
     timer = window.setTimeout(function() { get_next_slide("right"); }, delay);
-    
-    //Set Some Styling With jQuery
-    $('.carousel_track').css("transition-duration", "1.5s");
-    $("h1").css("font-size", "1.5em");
-    $("h2").css("font-size", "1.1em");
-    
-    
-});
+}
