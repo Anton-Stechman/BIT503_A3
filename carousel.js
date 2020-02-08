@@ -31,7 +31,7 @@ const geCurrentSlide = () =>
 }
 
 //Move To The Next Slide & Dot Navigation Button
-const moveSlides = (i, startTime) =>
+const moveSlides = (i) =>
 {
     geCurrentSlide();
 
@@ -47,7 +47,6 @@ const moveSlides = (i, startTime) =>
     currentDot.classList.remove('current-slide');
     currentSlide.classList.remove('current-slide');
     
-    //clearTimeout(function() {get_next_slide("right");}, delay)
     timer = window.setTimeout(function() { get_next_slide("right"); }, delay);
 }
 
@@ -82,7 +81,7 @@ const get_next_slide = (direction) =>
             }
     }
 
-    moveSlides(i, new Date());    
+    moveSlides(i);    
 }
 
 //When user clicks right, move slides to the right
@@ -96,7 +95,7 @@ prevButton.addEventListener('click', function() { window.clearTimeout(timer); ge
 const dotNavigation = (nextIndex) => 
 {
     i = nextIndex;
-    moveSlides(i, new Date());
+    moveSlides(i);
 }
 
 const clickDot = (dot, index) =>
