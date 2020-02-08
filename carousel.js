@@ -4,8 +4,7 @@ const nextButton    = document.querySelector('.carousel_button--right');
 const prevButton    = document.querySelector('.carousel_button--left');
 const dotsNav       = document.querySelector('.carousel_nav');
 const dots          = Array.from(dotsNav.children);
-
-const slideWidth = slides[0].getBoundingClientRect().width;
+const slideWidth    = slides[0].getBoundingClientRect().width;
 
 //arrange the slides side-by-side
 const setSlidePosition = (slide, index) => 
@@ -14,51 +13,64 @@ const setSlidePosition = (slide, index) =>
 }
 slides.forEach(setSlidePosition);
 
-const moveToSlide = (nextSlide) => 
+//Move Slides
+var i = 0;
+var currentSlide;
+var currentDot;
+
+const geCurrentSlide = () => 
 {
-    //const nextSlide = slides[i];
-    //const amountToMove = nextSlide.style.left;
+    currentSlide    = track.querySelector('.current-slide');
+    currentDot      = dotsNav.querySelector('.current-slide');
+}
+
+const moveSlides = (i) =>
+{
+        geCurrentSlide();
     
-    console.log(nextSlide);
-    //track.style.transfrom = 'translateX(' + amountToMove + ')';
+        var nextSlide           = slides[i];
+        var nextDot             = dots[i];
+        const amountToMove      = nextSlide.style.left;
+        track.style.transform   = 'translateX(-' + amountToMove + ')'; 
+
+        nextDot.classList.add('current-slide');
+        nextSlide.classList.add('current-slide');
+        
+        currentDot.classList.remove('current-slide');
+        currentSlide.classList.remove('current-slide');
 }
 
 const get_next_slide = (direction) =>
-{
-    const currentSlide = track.querySelector('.current-slide');
-    var i = slides.indexOf(currentSlide);
-    
+{        
     switch(direction)
     {
         case "right":
             {
-                //move slides right
-                if (i == slides.length)
+                if (i < slides.length - 1)
                 {
-                    moveToSlide(slides[0]);
+                    i++;
                 }
                 else
                 {
-                    //i++;
-                   moveToSlide(currentSlide.nextElementSibling);
+                    i = 0;
                 }
                 break;
             }
         case "left":
             {
-                //move slides left
-                if (i == 0)
+                if (i < 1)
                 {
-                   moveToSlide(slides[slides.length])
+                    i = slides.length - 1;
                 }
                 else
                 {
-                    //i--;
-                   moveToSlide(currentSlide.previousElementSibling);
+                    i--;
                 }
                 break;
             }
     }
+
+    moveSlides(i);    
 }
 
 //When user clicks right, move slides to the right
@@ -67,5 +79,16 @@ nextButton.addEventListener('click', e => get_next_slide("right"));
 //When user clicks left, move slides to the left
 prevButton.addEventListener('click', e => get_next_slide("left"));
 
+//TODO:
 //When user clicks nav indicator, slides move to that slide
+const dotNavigation = (nextIndex) => 
+{
+    i = nextIndex;
+    moveSlides(i);
+}
 
+const clickDot = (dot, index) =>
+{
+    dot.addEventListener('click', e => dotNavigation(dots.indexOf(dot)));
+}
+dots.forEach(clickDot);
