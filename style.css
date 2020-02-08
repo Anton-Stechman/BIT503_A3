@@ -18,12 +18,16 @@ body
     margin: auto;
     text-align: center;
     color: aliceblue;
+    max-width: 60%;
+    min-width: 30%;
 }
 .panel
 {
     color: aliceblue;
     max-width: 30%;
     font-size: 1.1em;
+    padding-left: 0;
+    padding-right: 0;
 }
 .panel ul
 {
@@ -31,13 +35,16 @@ body
 }
 .panel--left
 {
-
+    position: fixed;
     float: left;
+    left: 0;
 }
 .panel--right
 {
 
     float: right;
+    right: 0;
+    position: fixed;
 }
 .panel--title
 {
