@@ -108,5 +108,10 @@ window.onload = (function()
 {    
     setTimeout(function() { get_next_slide("right"); }, delay);
     
+    //Set Some Styling With jQuery
     $('.carousel_track').css("transition-duration", "1.5s");
+    $("h1").css("font-size", "2em");
+    $("h2").css("font-size", "1.5em");
+    
+    
 });
