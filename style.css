@@ -19,19 +19,36 @@ body
     text-align: center;
     color: aliceblue;
 }
-.menu
+.panel
 {
-   color: aliceblue;
+    color: aliceblue;
+    width: 30%;
+    font-size: 1.1em;
 }
-.menu--left
+.panel ul
 {
+    list-style: none;
+}
+.panel--left
+{
+
     float: left;
 }
-.menu--right
+.panel--right
 {
+
     float: right;
 }
+.panel--title
+{
+    font-size: 1.5em;
+    padding: 5px;
+}
 
+.panel a
+{
+    text-decoration: none;
+}
 /*Below is the styling for the image carousel*/
 button:focus
 {
