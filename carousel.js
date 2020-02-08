@@ -17,7 +17,7 @@ slides.forEach(setSlidePosition);
 var i = 0;
 var currentSlide;
 var currentDot;
-var sec = 2; //Delay Between Slides - CAN EDIT
+var sec = 15; //Delay Between Slides - CAN EDIT
 const delayMultiplier = 1000; //DO NOT EDIT
 var delay = sec * delayMultiplier;
 var timer;
