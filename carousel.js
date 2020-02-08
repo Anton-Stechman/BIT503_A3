@@ -83,10 +83,10 @@ const get_next_slide = (direction) =>
 }
 
 //When user clicks right, move slides to the right
-nextButton.addEventListener('click', function() { clearTimeout(delay); clearInterval(delay); get_next_slide("right"); });
+nextButton.addEventListener('click', function() { clearTimeout(delay); get_next_slide("right"); });
 
 //When user clicks left, move slides to the left
-prevButton.addEventListener('click', function() { clearTimeout(delay); clearInterval(delay); get_next_slide("left"); });
+prevButton.addEventListener('click', function() { clearTimeout(delay); get_next_slide("left"); });
 
 //TODO:
 //When user clicks nav indicator, slides move to that slide
@@ -98,7 +98,7 @@ const dotNavigation = (nextIndex) =>
 
 const clickDot = (dot, index) =>
 {
-    dot.addEventListener('click', function() { clearTimeout(delay); clearInterval(delay); dotNavigation(dots.indexOf(dot)); });
+    dot.addEventListener('click', function() { clearTimeout(delay); dotNavigation(dots.indexOf(dot)); });
 }
 
 dots.forEach(clickDot);
