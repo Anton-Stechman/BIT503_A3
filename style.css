@@ -9,11 +9,12 @@ p
 #banner
 {
     background: rgba(116, 118, 168, 0.28);
-    height: auto;
+    height: 250px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
+    flex: auto;
 }
 .main
 {
@@ -23,11 +24,18 @@ p
     color: aliceblue;
     width: 100%;
 }
+.main--page
+{
+    padding-top: 0;
+}
 .panel
 {
     color: aliceblue;
     max-width: 30%;
-   /* font-size: 1.1em;*/
+}
+li
+{
+    padding: 5px;
 }
 .panel ul
 {
@@ -60,6 +68,27 @@ a
 {
     color: aqua;
     text-decoration: underline;
+}
+.pageFrame
+{
+    
+    border-style: none;
+    height: 400px;
+    width: 60%;
+
+}
+.navButton
+{
+    border-style: none;
+    color: aliceblue;
+    background: transparent;
+    padding: 10px;
+    width: 90%;
+    cursor: pointer;
+}
+.navButton-selected
+{
+    background-color: rgba(5, 5, 5, 0.81);
 }
 /*Below is the styling for the image carousel*/
 button:focus
@@ -140,6 +169,7 @@ button:focus
 
 .carousel_nav
 {
+    position: relative;
     display: flex;
     justify-content: center;
     padding: 5px 0;

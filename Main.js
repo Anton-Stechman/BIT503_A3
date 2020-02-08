@@ -1,3 +1,73 @@
+const siteNav       = document.querySelector('.siteNav');
+const navButtons    = Array.from(siteNav.children); 
+
+
+var currentPage;
+const page_iframe = document.querySelector('.pageFrame');
+
+const getCurrentPage = () =>
+{
+    currentPage = siteNav.querySelector('.navButton-selected');
+}
+//Load Page On button Click
+const loadPage = (button) =>
+{
+    getCurrentPage();
+    var i = navButtons.indexOf(button);
+    var pageToLoad = "homePage.html";
+    
+    switch(i)
+    {
+        case 1: //home
+            {
+                pageToLoad = "homePage.html";
+                $(document).prop('title', 'Home | Kaiapoi Town')
+                break;
+            }        
+        case 2: //blog
+            {
+                pageToLoad = "test1.html"
+                $(document).prop('title', 'Blog | Kaiapoi Town')
+                break;
+            }
+        case 3: //activities
+            {
+                pageToLoad = "test2.html"
+                $(document).prop('title', 'Activities | Kaiapoi Town')
+                break;
+            }
+        case 4: //accomodation
+            {
+                pageToLoad = "homePage.html"
+                $(document).prop('title', 'Accomodation | Kaiapoi Town')
+                break;
+            }
+        case 5: //where to eat
+            {
+                pageToLoad = "test1.html"
+                $(document).prop('title', 'Food | Kaiapoi Town')
+                break;
+            }
+    }
+
+    if (i > 0 && button != currentPage) //0 is List Title
+    {
+        button.classList.add('navButton-selected');
+    
+        currentPage.classList.remove('navButton-selected');
+
+        $('.pageFrame').attr('src', pageToLoad);
+    }
+    //load page
+}
+
+//Add Listeners to Site nav buttons
+const buttonListeners = (button, index) =>
+{
+    button.addEventListener('click', function() { loadPage(button);});
+}
+navButtons.forEach(buttonListeners);
+
 const set_jQueryStyling = () => 
 {
     hideScrollButton();
