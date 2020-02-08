@@ -44,6 +44,7 @@ const moveSlides = (i) =>
     currentDot.classList.remove('current-slide');
     currentSlide.classList.remove('current-slide');
     
+    //clearTimeout(function() {get_next_slide("right");}, delay)
     setTimeout(function() { get_next_slide("right"); }, delay);
 }
 

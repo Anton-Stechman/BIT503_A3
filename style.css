@@ -3,7 +3,34 @@ body
     background-color: rgb(2, 14, 47);
 }
 
-
+#banner
+{
+    background: rgba(116, 118, 168, 0.28);
+    height: auto;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.main
+{
+    padding-top: 15%;
+    margin: auto;
+    text-align: center;
+    color: aliceblue;
+}
+.menu
+{
+   color: aliceblue;
+}
+.menu--left
+{
+    float: left;
+}
+.menu--right
+{
+    float: right;
+}
 
 /*Below is the styling for the image carousel*/
 button:focus
@@ -11,12 +38,13 @@ button:focus
     outline: 0;
 }
 .carousel
-{
+{ 
     position: relative;
-    height: 400px;
-    width: 60%;
+    height: 200px;
+    width: 40%;
     overflow: hidden;
-    margin: 0 auto;;
+    margin: 0 auto;
+    padding-top: 5px
 }
 
 .carousel_image
@@ -24,7 +52,6 @@ button:focus
     width: 100%;
     height: 100%;
     object-fit: cover;
-    overflow: hidden;
 }
 
 .carousel_track-container
@@ -40,7 +67,6 @@ button:focus
     list-style: none;
     position: relative;
     height: 100%;
-    /*transition-duration: 1s;*/ 
 }
 
 .carousel_slide
@@ -81,8 +107,8 @@ button:focus
 {
     display: flex;
     justify-content: center;
-    padding: 10px 0;
-    padding: 10px 0;
+    padding: 5px 0;
+    padding: 5px 0;
     
 }
 .carousel_indicator
@@ -94,7 +120,7 @@ button:focus
     background: rgba(255, 255, 255, 0.17);
     margin:  15px;
     cursor: pointer;
-    padding: 10px;
+    padding: 7px;
 }
 .carousel_indicator.current-slide
 {
