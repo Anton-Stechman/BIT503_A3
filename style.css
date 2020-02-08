@@ -22,7 +22,7 @@ body
 .panel
 {
     color: aliceblue;
-    width: 30%;
+    max-width: 30%;
     font-size: 1.1em;
 }
 .panel ul
