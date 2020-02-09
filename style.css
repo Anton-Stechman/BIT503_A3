@@ -210,12 +210,13 @@ button:focus
 
 .carousel_button--left
 {
-    left: -0px;
+    left: 0;
     cursor: pointer;
 }
 .carousel_button--right
 {
-    right: 0px;
+    padding-right: 5px;
+    right: 0;
     cursor: pointer;
 }
 

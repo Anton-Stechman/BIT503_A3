@@ -145,6 +145,9 @@ window.onload = () =>
         //scale down carousel
         $('.ad_image').css('object-fit', 'contain');
         $('.ad-carousel').css('width','60%');
+        $('.pageFrame').css('width', '40%');
+        $('.pageFrame').css('height', '300px');
+        $('.panel').css('width', '15%');
     }
     else
     {
