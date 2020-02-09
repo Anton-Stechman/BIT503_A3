@@ -8,13 +8,18 @@ p
 }
 #banner
 {
-    background: rgba(116, 118, 168, 0.28);
     height: 250px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    flex: auto;
+    /*flex: auto;*/
+}
+.banner-container
+{
+    height: 100%;
+    background-color: rgba(116, 118, 168, 0.28);
+    overflow: hidden;
 }
 .main
 {
@@ -31,11 +36,12 @@ p
 .panel
 {
     color: aliceblue;
-    max-width: 30%;
+    max-width: 40%;
+    min-width: 15%;
 }
 li
 {
-    padding: 5px;
+    padding-top: 5px;
 }
 .panel ul
 {
@@ -43,9 +49,15 @@ li
 }
 .panel--left
 {
-    position: fixed;
     float: left;
     left: 0;
+    position: fixed;
+
+}
+.panel--left ul
+{
+    text-align: left;
+    padding-left: 0;
 }
 .panel--right
 {
@@ -73,8 +85,8 @@ a
 {
     
     border-style: none;
-    height: 400px;
-    width: 60%;
+    height: 600px;
+    width: 70%;
 
 }
 .navButton
@@ -83,13 +95,31 @@ a
     color: aliceblue;
     background: transparent;
     padding: 10px;
-    width: 90%;
+    width: 100%;
     cursor: pointer;
+}
+.navButton:hover
+{
+    background-color: rgba(67, 67, 67, 0.81);
 }
 .navButton-selected
 {
-    background-color: rgba(5, 5, 5, 0.81);
+    background-color: rgba(67, 67, 67, 0.81);
 }
+
+.external_link-button
+{
+    background: transparent;
+    color: aliceblue;
+    width: 100%;
+    border-style: none;
+    padding: 10px;
+}
+.external_link-button:hover
+{
+    background-color: rgba(67, 67, 67, 0.81);
+}        
+        
 /*Below is the styling for the image carousel*/
 button:focus
 {
@@ -102,7 +132,7 @@ button:focus
     width: 40%;
     overflow: hidden;
     margin: 0 auto;
-    padding-top: 5px
+    padding-top: 5px;
 }
 
 .carousel_image

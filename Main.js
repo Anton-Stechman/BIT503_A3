@@ -1,6 +1,8 @@
 const siteNav       = document.querySelector('.siteNav');
 const navButtons    = Array.from(siteNav.children); 
 
+const external = document.querySelector('.external');
+const externalBtn = Array.from(external.children);
 
 var currentPage;
 const page_iframe = document.querySelector('.pageFrame');
@@ -8,6 +10,11 @@ const page_iframe = document.querySelector('.pageFrame');
 const getCurrentPage = () =>
 {
     currentPage = siteNav.querySelector('.navButton-selected');
+    
+    if (currentPage == null)
+    {
+        currentPage = external.querySelector('.navButton-selected')
+    }
 }
 //Load Page On button Click
 const loadPage = (button) =>
@@ -67,6 +74,35 @@ const buttonListeners = (button, index) =>
     button.addEventListener('click', function() { loadPage(button);});
 }
 navButtons.forEach(buttonListeners);
+
+const nav_to_external_site = (i) =>
+{
+
+        if (i == 0) // Waimak District Council Website
+        {
+            window.location = "https://www.waimakariri.govt.nz/home";
+        }
+       else if(i == 1)// Kaiapoi Wikipedia Page
+        {
+            getCurrentPage();
+            externalBtn[i].classList.add('navButton-selected');
+            currentPage.classList.remove('navButton-selected');
+            $('.pageFrame').attr('src',"https://en.wikipedia.org/wiki/Kaiapoi");
+        }
+        else // Kaiapoi I-Site Website
+        {
+            getCurrentPage();
+            externalBtn[i].classList.add('navButton-selected');
+            currentPage.classList.remove('navButton-selected');
+           $('.pageFrame').attr('src',"https://www.visitwaimakariri.co.nz/");
+        }
+}
+
+const externalButtonListeners = (button, index) =>
+{
+    button.addEventListener('click',function () {nav_to_external_site(index)});
+}
+externalBtn.forEach(externalButtonListeners);
 
 const set_jQueryStyling = () => 
 {
