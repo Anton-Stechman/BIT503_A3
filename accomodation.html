@@ -5,10 +5,35 @@
         <meta name="viewport" content="width = device-width, user-scalable = yes">
         <meta http-equiv="X-UA-Compatiable" content="ie=edge">
         <link rel="stylesheet" href="style.css">  
+        <script src="jQuery.js"></script>
     </head>
     <body>
         <div class="main main--page">
+            
+            <h1>See some of our favourite places to stay in Kaiapoi below</h1>
+            
+            <ul class="foodList">
+                <li><button class="leaveSite" onclick="gotoSite('https://silverstream-alpaca-farmstay-nz.book.direct/en-gb?utm_source=gmb')")>Silverstream Alpaca Farmstay</button></li>
+                <li><button class="leaveSite" onclick="gotoSite('https://www.kaiapoionwilliams.co.nz/')">Kaiapoi on Williams Motel</button></li>
+                <li><button class="leaveSite" onclick="gotoSite('https://www.wotif.co.nz/Kaiapoi-Hotels-Pine-Lake-View-Lodge.h37916191.Hotel-Information')">Pine Lave View Lodge</button></li>
+                <li><button onclick="lmgtfy()">or Search Here</button></li>
+            </ul>
+            
 
+            <iframe src="" class="frame" style="border-style: none;" width="100%;" height="500px;"></iframe>
         </div>
     </body>
+        <script>
+            
+        function gotoSite(site)
+        {
+            window.location = site;
+        }
+            
+        function lmgtfy()
+        {
+             const iframeLink = "https://lmgtfy.com/?q=accommodation+kaiapoi&iie=1";
+            $('.frame').attr('src', iframeLink);
+        }
+    </script>
 </html>

@@ -8,7 +8,23 @@
     </head>
     <body>
         <div class="main main--page">
-
+            
+            <h1>See some of our favourite food places in Kaiapoi below</h1>
+            
+            <ul class="foodList">
+                <li><button class="leaveSite" onclick="gotoSite('https://www.eaglebrewing.nz/portandeaglebrewpub')")>Port &amp; Eagle</button></li>
+                <li><button class="leaveSite" onclick="gotoSite('https://www.cbk.nz/kaiapoi')">CBK</button></li>
+                <li><button class="leaveSite" onclick="gotoSite('https://teppanyakitakao.jimdofree.com/')">Teppanyaki Takao</button></li>
+            </ul>
+            
+            <p>Or Check The Map Below</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d11597.045771621362!2d172.65913589885986!3d-43.39246463219238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sfood%20kaiapoi!5e0!3m2!1sen!2snz!4v1581235502850!5m2!1sen!2snz" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
         </div>
     </body>
+        <script>
+        function gotoSite(site)
+        {
+            window.location = site;
+        }
+    </script>
 </html>
