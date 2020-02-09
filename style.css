@@ -27,7 +27,7 @@ p
 .banner-container
 {
     height: 100%;
-    background-color: rgba(40, 41, 60, 0.76);;
+    background-color: rgba(40, 41, 60, 0.76);
     overflow: hidden;
 }
 .main
@@ -110,11 +110,11 @@ a
 }
 .navButton:hover
 {
-    background-color: rgba(67, 67, 67, 0.81);
+    background-color: rgba(40, 41, 60, 0.76);
 }
 .navButton-selected
 {
-    background-color: rgba(67, 67, 67, 0.81);
+    background-color: rgba(40, 41, 60, 0.76);
 }
 
 .external_link-button
@@ -127,7 +127,7 @@ a
 }
 .external_link-button:hover
 {
-    background-color: rgba(67, 67, 67, 0.81);
+    background-color: rgba(40, 41, 60, 0.76);
 }        
         
 /*Below is the styling for the image carousel*/
