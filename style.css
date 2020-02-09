@@ -4,12 +4,12 @@ body
 }
 footer
 {
-    height: 100px;
+    height:auto;
     width: 100%;
     bottom: 0;
     left: 0;
     position: fixed;
-    background-color: rgba(116, 118, 168, 0.28);
+    background-color: rgba(40, 41, 60, 0.76);
 }
 p
 {
@@ -27,7 +27,7 @@ p
 .banner-container
 {
     height: 100%;
-    background-color: rgba(116, 118, 168, 0.28);
+    background-color: rgba(40, 41, 60, 0.76);;
     overflow: hidden;
 }
 .main
@@ -95,7 +95,7 @@ a
 {
     /*object-fit:cover;*/
     border-style: none;
-    height: 570px;
+    height: 550px;
     width: 60%;
 
 }
@@ -135,7 +135,7 @@ button:focus
 {
     outline: 0;
 }
-.carousel
+.carousel, .ad-carousel
 { 
     position: relative;
     height: 200px;
@@ -144,21 +144,31 @@ button:focus
     margin: 0 auto;
     padding-top: 5px;
 }
-
-.carousel_image
+.ad-carousel
+{
+    height: 120px;
+    width: 20%;
+    padding-bottom: 5px;
+}
+.carousel_image, .ad_image
 {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+.ad_image
+{
+    cursor: pointer;
+}
 
-.carousel_track-container
+.carousel_track-container, .ad_track-container
 {
     height: 100%;
     position: relative;
 }
 
-.carousel_track
+
+.carousel_track, .ad_track
 {
     padding: 0;
     margin: 0;
@@ -167,7 +177,7 @@ button:focus
     height: 100%;
 }
 
-.carousel_slide
+.carousel_slide, .ad_slide
 {
     position: absolute;
     top: 0;

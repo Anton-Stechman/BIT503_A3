@@ -109,6 +109,7 @@ const set_jQueryStyling = () =>
     $("h1").css("font-size", "1.5em");
     $("h2").css("font-size", "1.1em");
     $('.carousel_track').css("transition-duration", "1.5s"); 
+    $('.ad_track').css("transition-duration", "2.5s");
 }
 
 const hideScrollButton = () => 
@@ -136,6 +137,7 @@ window.onload = () =>
 {
     set_jQueryStyling();
     timer = window.setTimeout(function() { get_next_slide("right"); }, delay);
+    var waitTime = window.setTimeout(function() { moveToNextAd(0);}, 2000)
 }
 
 

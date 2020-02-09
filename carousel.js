@@ -1,10 +1,13 @@
 const track         = document.querySelector('.carousel_track');
 const slides        = Array.from(track.children);
+const adtrack       = document.querySelector('.ad_track');
+const ads           = Array.from(adtrack.children);
 const nextButton    = document.querySelector('.carousel_button--right');
 const prevButton    = document.querySelector('.carousel_button--left');
 const dotsNav       = document.querySelector('.carousel_nav');
 const dots          = Array.from(dotsNav.children);
 const slideWidth    = slides[0].getBoundingClientRect().width;
+const adWidth       = ads[0].getBoundingClientRect().width;
 
 //arrange the slides side-by-side
 const setSlidePosition = (slide, index) => 
@@ -122,8 +125,40 @@ const clickDot = (dot, index) =>
 
 dots.forEach(clickDot);
 
+var curAd;
+var nextAd;
 
-window.onload = () =>
+const getAds = () =>
 {
-    timer = window.setTimeout(function() { get_next_slide("right"); }, delay);
+   curAd = adtrack.querySelector('.current-ad');
 }
+
+const moveToNextAd = (index) => 
+{
+    getAds();
+    
+    if (index < ads.length - 1)
+    {
+        index++;
+    }
+    else
+    {
+        index = 0;
+    }
+    
+    nextAd = ads[index];
+    const moveAmount = nextAd.style.left;
+    adtrack.style.transform = 'translateX(-' + moveAmount + ')';
+    
+    curAd.classList.remove('current-ad');
+    nextAd.classList.add('current-ad');
+
+    var waitTime = window.setTimeout(function() { moveToNextAd(index); }, 10000);
+}
+
+const arrange_ads = (ad, index) => 
+{
+    console.log("working");
+    ad.style.left = adWidth * index + 'px';
+}
+ads.forEach(arrange_ads);
