@@ -138,6 +138,21 @@ window.onload = () =>
     set_jQueryStyling();
     timer = window.setTimeout(function() { get_next_slide("right"); }, delay);
     var waitTime = window.setTimeout(function() { moveToNextAd(0);}, 2000)
+    
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) 
+    {
+
+        //scale down carousel
+        $('.ad_image').css('object-fit', 'contain');
+        $('.ad-carousel').css('width','60%');
+    }
+    else
+    {
+
+        //scale up carousels
+        $('.ad_image').css('object-fit', 'cover');
+        $('.ad-carousel').css('width','25%');
+    }
 }
 
 

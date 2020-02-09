@@ -142,13 +142,13 @@ button:focus
     width: 40%;
     overflow: hidden;
     margin: 0 auto;
-    padding-top: 5px;
+    padding-top: .05%;
 }
 .ad-carousel
 {
     height: 120px;
-    width: 20%;
-    padding-bottom: 5px;
+    width: 60%;
+    padding-bottom: .05%;
 }
 .carousel_image, .ad_image
 {
@@ -158,6 +158,8 @@ button:focus
 }
 .ad_image
 {
+    
+    
     cursor: pointer;
 }
 
@@ -235,7 +237,7 @@ button:focus
     background: rgba(255, 255, 255, 0.17);
     margin:  15px;
     cursor: pointer;
-    padding: 7px;
+    padding: .4%;
 }
 .carousel_indicator.current-slide
 {
