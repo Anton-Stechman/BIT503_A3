@@ -4,6 +4,7 @@ const external      = document.querySelector('.external');
 const externalBtn   = Array.from(external.children);
 const page_iframe   = document.querySelector('.pageFrame');
 
+var bgColour;
 var currentPage;
 
 const getCurrentPage = () =>
@@ -30,27 +31,27 @@ const loadPage = (button) =>
                 $(document).prop('title', 'Home | Kaiapoi Town')
                 break;
             }        
-        case 2: //blog
+        case 2: //gallery
             {
-                pageToLoad = "test1.html"
-                $(document).prop('title', 'Blog | Kaiapoi Town')
+                pageToLoad = "gallery.html"
+                $(document).prop('title', 'Gallery | Kaiapoi Town')
                 break;
             }
         case 3: //activities
             {
-                pageToLoad = "test2.html"
+                pageToLoad      = "attractions.html"
                 $(document).prop('title', 'Activities | Kaiapoi Town')
                 break;
             }
         case 4: //accomodation
             {
-                pageToLoad = "homePage.html"
+                pageToLoad = "accomodation.html"
                 $(document).prop('title', 'Accomodation | Kaiapoi Town')
                 break;
             }
         case 5: //where to eat
             {
-                pageToLoad = "test1.html"
+                pageToLoad = "food.html"
                 $(document).prop('title', 'Food | Kaiapoi Town')
                 break;
             }
@@ -64,6 +65,7 @@ const loadPage = (button) =>
 
         $('.pageFrame').attr('src', pageToLoad);
     }
+    
     //load page
 }
 
@@ -106,10 +108,41 @@ externalBtn.forEach(externalButtonListeners);
 const set_jQueryStyling = () => 
 {
     hideScrollButton();
+    //general Styling with jQuery
     $("h1").css("font-size", "1.5em");
     $("h2").css("font-size", "1.1em");
     $('.carousel_track').css("transition-duration", "1.5s"); 
     $('.ad_track').css("transition-duration", "2.5s");
+    $("button").css('cursor','pointer');
+    
+    //jQuery Styling Based off dependincies
+    if (bgColour != null)
+    {
+        $("body").css('background-color', bgColour);
+    }
+    else
+    {
+        $("body").css('background-color', 'black');
+    }
+    
+        
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) 
+    {
+
+        //scale down carousel
+        $('.ad_image').css('object-fit', 'contain');
+        $('.ad-carousel').css('width','40%');
+        $('.pageFrame').css('width', '40%');
+        $('.pageFrame').css('height', '300px');
+        $('.panel').css('width', '15%');
+    }
+    else
+    {
+        //scale up carousels
+        $('.ad_image').css('object-fit', 'fill');
+        $('.ad-carousel').css('height', '110px');
+        $('.ad-carousel').css('width','25%');
+    }
 }
 
 const hideScrollButton = () => 
@@ -138,24 +171,6 @@ window.onload = () =>
     set_jQueryStyling();
     timer = window.setTimeout(function() { get_next_slide("right"); }, delay);
     var waitTime = window.setTimeout(function() { moveToNextAd(0);}, 2000)
-    
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) 
-    {
-
-        //scale down carousel
-        $('.ad_image').css('object-fit', 'contain');
-        $('.ad-carousel').css('width','60%');
-        $('.pageFrame').css('width', '40%');
-        $('.pageFrame').css('height', '300px');
-        $('.panel').css('width', '15%');
-    }
-    else
-    {
-
-        //scale up carousels
-        $('.ad_image').css('object-fit', 'cover');
-        $('.ad-carousel').css('width','25%');
-    }
 }
 
 

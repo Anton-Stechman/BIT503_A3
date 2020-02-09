@@ -158,7 +158,6 @@ const moveToNextAd = (index) =>
 
 const arrange_ads = (ad, index) => 
 {
-    console.log("working");
     ad.style.left = adWidth * index + 'px';
 }
 ads.forEach(arrange_ads);
