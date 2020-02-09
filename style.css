@@ -2,6 +2,15 @@ body
 {
     background-color: rgb(2, 14, 47);
 }
+footer
+{
+    height: 100px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(116, 118, 168, 0.28);
+}
 p
 {
     font-family: cursive;
@@ -86,7 +95,7 @@ a
 {
     /*object-fit:cover;*/
     border-style: none;
-    height: 600px;
+    height: 570px;
     width: 60%;
 
 }
