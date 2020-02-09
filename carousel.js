@@ -13,15 +13,14 @@ const setSlidePosition = (slide, index) =>
 }
 slides.forEach(setSlidePosition);
 
-//Move Slides
-var i = 0;
+//Move Slides - Variables
+var i                   = 0;
+var sec                 = 15; //Delay Between Slides - CAN EDIT
+const delayMultiplier   = 1000; //DO NOT EDIT
+var delay               = sec * delayMultiplier;
+var timer;
 var currentSlide;
 var currentDot;
-var sec = 15; //Delay Between Slides - CAN EDIT
-const delayMultiplier = 1000; //DO NOT EDIT
-var delay = sec * delayMultiplier;
-var timer;
-var canScroll = false;
 
 //Get The Current Slide & Dot Navigation Button
 const geCurrentSlide = () => 
@@ -93,7 +92,6 @@ nextButton.addEventListener('click', function() { window.clearTimeout(timer); hi
 //When user clicks left, move slides to the left
 prevButton.addEventListener('click', function() { window.clearTimeout(timer);hideScrollButton(); get_next_slide("left");});
 
-//TODO:
 //When user clicks nav indicator, slides move to that slide
 const dotNavigation = (nextIndex) => 
 {

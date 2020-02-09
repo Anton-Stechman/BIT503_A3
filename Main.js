@@ -1,11 +1,10 @@
 const siteNav       = document.querySelector('.siteNav');
 const navButtons    = Array.from(siteNav.children); 
-
-const external = document.querySelector('.external');
-const externalBtn = Array.from(external.children);
+const external      = document.querySelector('.external');
+const externalBtn   = Array.from(external.children);
+const page_iframe   = document.querySelector('.pageFrame');
 
 var currentPage;
-const page_iframe = document.querySelector('.pageFrame');
 
 const getCurrentPage = () =>
 {
