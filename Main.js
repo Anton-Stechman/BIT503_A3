@@ -82,21 +82,36 @@ const nav_to_external_site = (i) =>
 
         if (i == 0) // Waimak District Council Website
         {
-            window.location = "https://www.waimakariri.govt.nz/home";
+            window.open('https://www.waimakariri.govt.nz/home','_blank');
         }
        else if(i == 1)// Kaiapoi Wikipedia Page
         {
             getCurrentPage();
-            externalBtn[i].classList.add('navButton-selected');
-            currentPage.classList.remove('navButton-selected');
-            $('.pageFrame').attr('src',"https://en.wikipedia.org/wiki/Kaiapoi");
+            if (externalBtn[i] == currentPage)
+            {
+                window.open('https://en.wikipedia.org/wiki/Kaiapoi', '_blank');    
+            }
+            else
+            {
+                externalBtn[i].classList.add('navButton-selected');
+                currentPage.classList.remove('navButton-selected');
+                $('.pageFrame').attr('src',"https://en.wikipedia.org/wiki/Kaiapoi");
+            }
         }
         else // Kaiapoi I-Site Website
         {
             getCurrentPage();
-            externalBtn[i].classList.add('navButton-selected');
-            currentPage.classList.remove('navButton-selected');
-           $('.pageFrame').attr('src',"https://www.visitwaimakariri.co.nz/");
+            
+            if (externalBtn[i] == currentPage)
+            {
+                window.open('https://www.visitwaimakariri.co.nz/', '_blank');    
+            }
+            else
+            {
+                externalBtn[i].classList.add('navButton-selected');
+                currentPage.classList.remove('navButton-selected');
+                $('.pageFrame').attr('src',"https://www.visitwaimakariri.co.nz/");
+            }
         }
 }
 
