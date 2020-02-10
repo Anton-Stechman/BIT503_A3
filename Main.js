@@ -239,7 +239,7 @@ $(document).ready(function(){
         alert('No AdBlock :)');
         
     } else {
-        window.alert("Hi Marker!, it appears you are using an adblock extension :( please diable to see all features of this site for marking");
+        alert("Hello Marker!, it appears you are using an adblock extension :( please diable to see all features of this site for marking");
         
     }
 });

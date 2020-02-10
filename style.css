@@ -260,3 +260,8 @@ button
     height: 1px;
     width: 1px;
 }
+.galImage
+{
+    width: 100%;
+    height: 100%;
+}
