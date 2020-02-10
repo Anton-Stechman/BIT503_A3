@@ -4,8 +4,9 @@ const external      = document.querySelector('.external');
 const externalBtn   = Array.from(external.children);
 const page_iframe   = document.querySelector('.pageFrame');
 
-var bgColour;
+var bgColour = $('#colorPicker').attr('value');
 var currentPage;
+var showPicker = false;
 
 const getCurrentPage = () =>
 {
@@ -105,6 +106,52 @@ const externalButtonListeners = (button, index) =>
 }
 externalBtn.forEach(externalButtonListeners);
 
+function changeBgColour()
+{
+    bgColour = $('#colorPicker').val();
+    
+    if (bgColour != null)
+    {
+        $("body").css('background-color', bgColour);
+    }
+    else
+    {
+        $("body").css('background-color', 'black');
+    }
+    showPicker = false;
+    showColorPicker();
+
+}
+
+function pickerButton()
+{
+
+    if (showPicker)
+    {
+        showPicker = false;
+    }
+    else
+    {
+        showPicker = true;
+    }
+    
+    showColorPicker();
+}
+
+const showColorPicker = () =>
+{
+    if (showPicker)
+    {
+        //show colour picker
+        $('#colorPicker').css('visibility', 'visible');
+    }
+    else
+    {
+        //hide colour picker
+        $('#colorPicker').css('visibility', 'hidden');
+    }
+}
+
 const set_jQueryStyling = () => 
 {
     hideScrollButton();
@@ -114,25 +161,17 @@ const set_jQueryStyling = () =>
     $('.carousel_track').css("transition-duration", "1.5s"); 
     $('.ad_track').css("transition-duration", "2.5s");
     $("button").css('cursor','pointer');
-    
-    //jQuery Styling Based off dependincies
-    if (bgColour != null)
-    {
-        $("body").css('background-color', bgColour);
-    }
-    else
-    {
-        $("body").css('background-color', 'black');
-    }
-    
-        
+    showColorPicker();
+    changeBgColour();
+
+    //check if user is on mobile
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) 
     {
 
         //scale down carousel
         $('.ad_image').css('object-fit', 'contain');
         $('.ad-carousel').css('width','40%');
-        $('.pageFrame').css('width', '40%');
+        $('.pageFrame').css('width', 'auto');
         $('.pageFrame').css('height', '300px');
         $('.panel').css('width', '15%');
     }
