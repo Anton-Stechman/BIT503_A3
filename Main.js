@@ -118,9 +118,12 @@ function changeBgColour()
     {
         $("body").css('background-color', 'black');
     }
-    showPicker = false;
+    if (showPicker)
+    {    
+        showPicker = false;
+        window.alert("Background Colour Has Been Changed!");
+    }
     showColorPicker();
-
 }
 
 function pickerButton()
