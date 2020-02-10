@@ -8,13 +8,16 @@ var bgColour = $('#colorPicker').attr('value');
 var currentPage;
 var showPicker = false;
 
+//load iframes (youtube videos last) for performance reasons
+
+
 const getCurrentPage = () =>
 {
     currentPage = siteNav.querySelector('.navButton-selected');
     
     if (currentPage == null)
     {
-        currentPage = external.querySelector('.navButton-selected')
+        currentPage = external.querySelector('.navButton-selected');
     }
 }
 //Load Page On button Click
@@ -228,6 +231,18 @@ window.onload = () =>
     set_jQueryStyling();
     timer = window.setTimeout(function() { get_next_slide("right"); }, delay);
     var waitTime = window.setTimeout(function() { moveToNextAd(0);}, 2000)
+    
+    
 }
+$(document).ready(function(){
+    if($("#wrapfabtest").height() > 0) {
+        alert('No AdBlock :)');
+        
+    } else {
+        window.alert("Hi Marker!, it appears you are using an adblock extension :( please diable to see all features of this site for marking");
+        
+    }
+});
+
 
 
