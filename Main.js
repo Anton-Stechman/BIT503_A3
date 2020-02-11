@@ -139,7 +139,7 @@ function changeBgColour()
     if (showPicker)
     {    
         showPicker = false;
-        window.alert("Background Colour Has Been Changed!");
+        window.alert("Background Colour Has Been Changed To: " + bgColour);
     }
     showColorPicker();
 }
@@ -192,7 +192,7 @@ const set_jQueryStyling = () =>
         //scale down carousel
         $('.ad_image').css('object-fit', 'contain');
         $('.ad-carousel').css('width','40%');
-        $('.pageFrame').css('width', 'auto');
+        $('.pageFrame').css('width', '30%');
         $('.pageFrame').css('height', '300px');
         $('.panel').css('width', '15%');
     }

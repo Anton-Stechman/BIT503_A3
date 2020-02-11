@@ -1,15 +1,25 @@
+p, button, h1, h2
+{
+    font-family: 'Gloria Hallelujah', cursive;
+
+}
+
 footer
 {
     height:auto;
     width: 100%;
     bottom: 0;
     left: 0;
-    position: fixed;
-    background-color: rgba(40, 41, 60, 0.76);
+    position:fixed;
+    /*background-color: rgba(40, 41, 60, 0.76);*/
 }
-p
+.footer-text p
 {
-    font-family: cursive;
+    float: left;
+    padding-left: 0.5%;
+    font-family: sans-serif;
+    bottom: 0;
+    position: fixed;
 }
 #banner
 {
@@ -18,12 +28,12 @@ p
     position: fixed;
     top: 0;
     left: 0;
-    /*flex: auto;*/
+    flex: auto;
 }
 .banner-container
 {
     height: 100%;
-    background-color: rgba(40, 41, 60, 0.76);
+    /*background-color: rgba(40, 41, 60, 0.76);*/
     overflow: hidden;
 }
 .colour-picker
@@ -37,7 +47,7 @@ p
 }
 .main
 {
-    padding-top: 250px;
+    padding-top: 230px;
     margin: auto;
     text-align: center;
     color: aliceblue;
@@ -57,6 +67,7 @@ p
 li
 {
     padding-top: 5px;
+    padding-bottom: 5px;
 }
 ul
 {
@@ -101,8 +112,18 @@ a
     /*object-fit:cover;*/
     border-style: none;
     height: 550px;
+    width: 110%;
+    overflow: auto;
+    margin: auto;
+    text-align: center;
+}
+.pageContainer
+{
+    margin: auto;
     width: 60%;
-
+    height: 550px;
+    overflow: hidden;
+    padding: 0;
 }
 .navButton
 {
@@ -146,6 +167,7 @@ button
     border-style: none;
     color: aliceblue;
     background: transparent;
+    font-size: 1.5em;
 }
 .carousel, .ad-carousel
 { 
@@ -158,6 +180,7 @@ button
 }
 .ad-carousel
 {
+    float: right;
     height: 80px;
     width: 40%;
     padding:0;
@@ -170,7 +193,15 @@ button
 }
 .ad_image
 { 
-    cursor: pointer;
+    cursor: pointer;   
+}
+
+.ad_image-side
+{
+    object-fit:contain;
+    max-height: 330px;
+    width: auto;
+    
 }
 
 .carousel_track-container, .ad_track-container
