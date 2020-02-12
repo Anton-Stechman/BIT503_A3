@@ -4,12 +4,9 @@ const external      = document.querySelector('.external');
 const externalBtn   = Array.from(external.children);
 const page_iframe   = document.querySelector('.pageFrame');
 
-var bgColour = $('#colorPicker').attr('value');
+var bgColour    = $('#colorPicker').attr('value');
+var showPicker  = false;
 var currentPage;
-var showPicker = false;
-
-//load iframes (youtube videos last) for performance reasons
-
 
 const getCurrentPage = () =>
 {
@@ -228,6 +225,7 @@ const showScrollButton = (direction) =>
 
 window.onload = () => 
 {
+    
     set_jQueryStyling();
     timer = window.setTimeout(function() { get_next_slide("right"); }, delay);
     var waitTime = window.setTimeout(function() { moveToNextAd(0);}, 2000)
@@ -236,10 +234,9 @@ window.onload = () =>
 }
 $(document).ready(function(){
     if($("#wrapfabtest").height() > 0) {
-        alert('No AdBlock :)');
-        
+        //no adblock enabled
     } else {
-        alert("Hello Marker!, it appears you are using an adblock extension :( please diable to see all features of this site for marking");
+        alert("Hello Marker!, it appears you are using an adblock extension :( please diable then refresh page to see all features of this site for marking");
         
     }
 });

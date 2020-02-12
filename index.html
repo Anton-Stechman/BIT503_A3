@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="html">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width = device-width, user-scalable = yes">
-        <meta http-equiv="X-UA-Compatiable" content="ie=edge">
+        <meta name="viewport" content="width=device-width,intial-scale=1,user-scalable=yes">
         <title>Home | Kaiapoi Town</title>
         <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">  
-        <script src="jQuery.js" class="jQuery"></script><!---Load jQuery Library--->
+        <script src="jQuery.js" class="jQuery"></script>
     </head>
     
     <body>
         <div id="banner">
             <div class="banner-container">
-                <!---Caoursel Main Body--->         <div class="carousel">
+                <div class="carousel">
 
-                <div class="colour-picker">
-                    <button onclick="pickerButton()">Customize Background Colour</button>
-                    <input id="colorPicker" type="color" onchange="changeBgColour() ">
-                </div>                
+                    <div class="colour-picker">
+                        <button onclick="pickerButton()">Click Here To Customize Background Colour</button>
+                        <input id="colorPicker" type="color" onchange="changeBgColour() ">
+                    </div>                
 
                     <div class="carousel_track-container">
 
@@ -30,12 +29,8 @@
                             <li class="carousel_slide"><img class="carousel_image" src="Resources/Kaiapoi4.jpg" alt="image_4"></li>
                         </ul>
 
-                                            <button class="carousel_button carousel_button--left">
-                        &lt;
-                    </button>
-                    <button class="carousel_button carousel_button--right">
-                        &gt;
-                    </button>  
+                        <button class="carousel_button carousel_button--left">&lt;</button>
+                        <button class="carousel_button carousel_button--right">&gt;</button>  
                     </div>
            
                 </div>
@@ -56,7 +51,7 @@
                     <li><button class="external_link-button">W.D.C</button></li>
                     <li><button class="external_link-button">Wiki</button></li>
                     <li><button class="external_link-button">i-Site</button></li>
-                    <li><img src="Resources/ad6.gif" class="ad_image ad_image-side"></li>
+                    <li><img src="Resources/ad6.gif" class="ad_image ad_image-side" alt="Fake_Ad"></li>
                 </ul>
             </div>
             
@@ -75,7 +70,10 @@
                 </div>
         </div>
     </body>
-    
+        <div id="wrapfabtest">
+        <div class="adBanner">
+        </div>
+    </div>
     <footer>
         <div class="ad-carousel">
             <div class="ad_track-container">
@@ -91,14 +89,9 @@
             </div>
         </div>
         <div class="footer-text">
-            <p><a>&copy; Web Design By: Anton Stechman, For BIT503_Assignment-3 Through </a><a href="https://www.openpolytechnic.ac.nz/?gclid=EAIaIQobChMI2sWCxLDI5wIVlx0rCh321AVGEAAYASAAEgKGS_D_BwE">The Open Polyechnic</a>&nbsp;</p>
+            <p><a>&copy; Web Design By: Anton Stechman, For BIT503_Assignment-3 Through </a><a href="https://www.openpolytechnic.ac.nz/?gclid=EAIaIQobChMI2sWCxLDI5wIVlx0rCh321AVGEAAYASAAEgKGS_D_BwE">The Open Polyechnic</a></p>
         </div>
     </footer>
-    <div id="wrapfabtest">
-        <div class="adBanner">
-        </div>
-    </div>
-
     <script src="carousel.js" async></script>
     <script src="Main.js"></script>
 </html>

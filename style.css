@@ -51,6 +51,11 @@ footer
 .colour-picker button
 {
     cursor: pointer;
+    font-size: 0.75em;
+}
+#colourPicker
+{
+    border-width:thin;
 }
 .main
 {
@@ -69,9 +74,9 @@ footer
 {
     color: aliceblue;
     max-width: 40%;
-    min-width: 15%;
+    min-width: 1%;
 }
-li
+li 
 {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -117,9 +122,9 @@ a
 .pageFrame
 {
     /*object-fit:cover;*/
-    border-style: none;
+    border-style:none;
     height: 550px;
-    width: 110%;
+    width: 102%;
     overflow: auto;
     margin: auto;
     text-align: center;

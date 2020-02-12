@@ -125,6 +125,7 @@ const clickDot = (dot, index) =>
 
 dots.forEach(clickDot);
 
+//This section is for Ad Carousel, (fake ads used)
 var curAd;
 var nextAd;
 
